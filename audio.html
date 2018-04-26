@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<!--
+<form id="searchForm" name="searchForm" method="GET" action="/china/pl/0-s-c-1/Search.html" langID="2">
+<select class="qc" name="qc"><option VALUE="prd" SELECTED>产品信息</option><option VALUE="comp">公司信息</option></select> <wbr>
+<input class="qs" name="qs" size="35" x-webkit-speech="" x-webkit-grammar="builtin:search" maxlength="255" id="diyKeyword" lang="zh-cn" value="">
+<input type="submit" class="hl-button" value="搜 索">
+<input type="hidden" class="ns" name="ns" value="0">
+</form>
+-->
+<input type="text" x-webkit-speech lang="zh-CN"/>
+<input type="text" class="text" name="test" id="test" x-webkit-speech lang="zh-CN" x-webkit-grammar="bUIltin:search">
+<input type="text" placeholder="输入 回车搜索" autofocus x-webkit-speech>
+<script>
+var recognition = new webkitSpeechRecognition();
+recognition.onresult = function(event) { 
+  console.log(event) 
+}
+recognition.start();
+</script>
+</html>
