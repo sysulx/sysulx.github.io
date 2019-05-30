@@ -22,6 +22,10 @@ for (var i = 0; i < 14*14; i++){
 document.getElementById("AI").onclick = function(){
 	AI = true;
 }
+var interval = 600
+document.getElementById("auto").onclick = function(){
+	var t = setInterval("auto_play()",interval)
+}
 document.getElementById('frame1').innerHTML = s;
 var s2 = "";
 for (var i = 0; i < 15*15; i++){

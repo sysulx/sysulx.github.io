@@ -235,12 +235,19 @@ function AI_play(data, label){
     console.log(point)
     var dom = document.getElementsByClassName("grid2")[point[0]*15+point[1]]
     //dom.onclick()
+    setCheese(dom,label)
+}
+function setCheese(dom, label){
     var obj = dom
+    if (label == -1){
         obj.style.background = 'white';
-		obj.style.borderRadius = '13px';
-		x = obj.getAttribute('row');
-		y = obj.getAttribute('col');
-		setgame(x,y,label);
+    } else {
+        obj.style.background = 'black';
+    }
+	obj.style.borderRadius = '13px';
+	x = obj.getAttribute('row');
+	y = obj.getAttribute('col');
+	setgame(x,y,label);
 }
 function sort(key, value, top_k){ // key: score of (i,j), value:(i,j)
     var len = key.length
@@ -271,6 +278,7 @@ function auto_play(){
         //console.log(point)
         var dom = document.getElementsByClassName("grid2")[point[0]*15+point[1]]
         //dom.onclick() 这个暂时不对
+        setCheese(dom, auto)
         if(win(point[0],point[1],game)){
             over = true
         }
