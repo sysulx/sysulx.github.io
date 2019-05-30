@@ -78,7 +78,8 @@ function win(x, y, data){ // 15*15
 function evaluate_full(x, y, data, label){
     var self = evaluate(x,y,data,label)
     var opponent = evaluate(x, y, data, -label) //考虑对手的棋
-    return self*0.6+opponent*0.4
+    //return self*0.6+opponent*0.4
+    return Math.max(self, opponent)
 }
 
 function evaluate(x, y, data, label){
